@@ -2,8 +2,8 @@ def build(ctx):
 
     # Illustrate simple use of run_py_script
     ctx(
-        features='run_py_script',
-        source='get_simulation_draws.py',
-        target=ctx.path_to(ctx, 'OUT_DATA', 'sample.npy'),
+        features='run_m_script.py',
+        source='get_simulation_draws.m',
+        target=ctx.path_to(ctx, 'OUT_DATA', 'sample.mat'),
         name='get_simulation_draws'
     )

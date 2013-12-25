@@ -19,18 +19,19 @@ def post_install(ctx):
 
 
 def build(ctx):
-    # Build the documentation in pdf (via LaTeX) and html format.
-    ctx(
-        features='sphinx',
-        buildername='latex',
-        source='conf.py',
-        name='sphinx_tex'
-    )
-    ctx(
-        features='sphinx',
-        buildername='html',
-        source='conf.py',
-        name='sphinx_html'
-    )
-    # Install only after the build has finished.
-    ctx.add_post_fun(post_install)
+    pass
+    # # Build the documentation in pdf (via LaTeX) and html format.
+    # ctx(
+    #     features='sphinx',
+    #     buildername='latex',
+    #     source='conf.py',
+    #     name='sphinx_tex'
+    # )
+    # ctx(
+    #     features='sphinx',
+    #     buildername='html',
+    #     source='conf.py',
+    #     name='sphinx_html'
+    # )
+    # # Install only after the build has finished.
+    # ctx.add_post_fun(post_install)

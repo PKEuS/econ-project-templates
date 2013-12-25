@@ -1,42 +1,35 @@
-function [new_location] = move_until_happy(location, agents, n_neighbours, require_same_type, max_moves)
-% If not happy, then randomly choose new locations until happy or max moves
-% reached.
+function [new_loc] = move_until_happy(loc, A, n, r, m)
+% If not happy, then randomly choose new locations until happy or max moves reached.
 
-    function [zero_one] = happy(location, type, agents, n_neighbours, require_same_type)
+    function [zero_one] = happy(loc, type, A, n, r)
     % 1, if sufficient number of nearest neighbours are of the same type,
     % else 0.
     
-    % Obtain row indeces of *n_neighbours*-nearest neighbours in *other_agents*
-    N = KDTreeSearcher(agents(:, 1:2));
-    idx = knnsearch(N, location(1:2), 'K', n_neighbours);
+    % Obtain row indeces of *n*-nearest neighbours in *A*
+    N = KDTreeSearcher(A(:, 1:2), 'Distance', 'euclidean');
+    idx = knnsearch(N, loc(1:2), 'K', n);
 
-    % Check if agents is happy
-    if sum(agents(idx, 3) == type) >= require_same_type;
-        zero_one = 1; % happy
-    elseif sum(agents(idx, 3) == type) < require_same_type;
-        zero_one = 0; % unhappy
-    else
-        disp('Counting nearest types went wrong');
-    end
+        % Check if agent is happy
+        if sum(A(idx, 3) == type) >= r;
+            zero_one = 1; % happy
+        else sum(A(idx, 3) == type) < r;
+            zero_one = 0; % unhappy
+        end
     end
 
 % Get agent's type
-this_type = location(3);
+this_type = loc(3);
 
-% Get agent's happiness
-agent_happy = happy(location, this_type, agents, n_neighbours, require_same_type);
-
-% Check if agent is happy
-if agent_happy == 1;
-    new_location = location;
-    return;
-else
-    for i = 1:max_moves;
-        % Draw new location and pass agent's type
-        new_location = [rand(1,2), this_type];
-        if happy(new_location, this_type, agents, n_neighbours, require_same_type) == 1;
-            return;
+    % Check if agent is happy
+    if happy(loc, this_type, A, n, r) == 1;
+        new_loc = loc;
+    else 
+        for i = 1:m;
+            % Draw new location and pass agent's type
+            new_loc = [rand(1,2), this_type];
+            if happy(new_loc, this_type, A, n, r) == 1;
+                break;
+            end
         end
     end
-end
 end
