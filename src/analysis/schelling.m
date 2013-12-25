@@ -12,13 +12,13 @@
 %        - Get docs sorted out
 
 % Add path to Matlab's project_paths function
-addpath ../../bld/src/library/matlab/
+addpath ../../bld/src/library/
 
 % Add path to Matlab's project_paths function
 addpath ../model_code/
 
 % Load random sample
-load(project_paths('OUT_DATA', 'samples.mat')
+load(project_paths('OUT_DATA', 'samples.mat'))
 
 % Set up a matrix specifying each agent's location and type
 
@@ -42,6 +42,9 @@ n_neighbours = 10;
 
 % Same type requirement
 require_same_type = 4;
+
+% Set random seed
+rng(54321)
 
 % Initilize agents' location and types. Column 1 & 2: location; Column 3: type.
 agents = NaN*zeros(n1+n2, 3);

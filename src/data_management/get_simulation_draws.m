@@ -7,7 +7,7 @@
 % use of *run_py_script* only.
 
 % Add path to Matlab's project_paths function
-addpath ../../bld/src/library/matlab/
+addpath ../../bld/src/library/
 
 n_types = 2;
 n_draws = 30000;
