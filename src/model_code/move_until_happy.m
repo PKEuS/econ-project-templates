@@ -1,7 +1,7 @@
 function [new_loc] = move_until_happy(loc, A, n, r, m)
 % If not happy, then randomly choose new locations until happy or max moves reached.
 
-    function [zero_one] = happy(loc, type, A, n, r)
+    function [zero_one] = happy(loc, typ, A, n, r)
     % 1, if sufficient number of nearest neighbours are of the same type,
     % else 0.
     
@@ -10,9 +10,9 @@ function [new_loc] = move_until_happy(loc, A, n, r, m)
     idx = knnsearch(N, loc(1:2), 'K', n);
 
         % Check if agent is happy
-        if sum(A(idx, 3) == type) >= r;
+        if sum(A(idx, 3) == typ) >= r;
             zero_one = 1; % happy
-        else sum(A(idx, 3) == type) < r;
+        else;
             zero_one = 0; % unhappy
         end
     end
