@@ -1,5 +1,5 @@
 % Run a Schelling (1969, :cite:`Schelling69`) segregation
-% model and store a list with locations by type at each cycle.
+% model and store a database with locations and types at each cycle.
 
 % The scripts expects a model name to be passed on the command
 % line that needs to correspond to a file called
@@ -14,13 +14,22 @@
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
 
-% Add path to Matlab's project_paths function
+% Add path to relevant model code
 addpath ../model_code/
 
-% Load random sample
+% Add path to matlab-json parser
+addpath ../library/matlab-json/
+json.startup
+
+% Load random sample with locations
 load(project_paths('OUT_DATA', 'samples.mat'))
 
 % Set up a matrix specifying each agent's location and type
+this_model = json.read(project_paths('IN_MODEL_SPECS', 'baseline.json'));
+
+disp(this_model);
+
+disp(this_model.('n_types'))
 
 % Number of different types
 n_types = 2;
