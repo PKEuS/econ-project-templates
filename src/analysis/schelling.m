@@ -5,11 +5,10 @@
 % line that needs to correspond to a file called
 % ``[model_name].json`` in the "IN_MODEL_SPECS" directory.
 
-% TO DO: - Load json files with model specifications
-%        - Plot locations        
-%        - Allow for multiple types
+% TO DO: - Plot locations        
 %        - Recover model name from command line
 %        - Get docs sorted out
+%        - Sort out Java stuff
 
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
@@ -22,27 +21,28 @@ addpath ../library/matlab-json/
 json.startup
 
 % Load random sample with locations
-load(project_paths('OUT_DATA', 'samples.mat'))
+load(project_paths('OUT_DATA', 'samples.mat'));
 
 % Set up a matrix specifying each agent's location and type
 model = json.read(project_paths('IN_MODEL_SPECS', 'baseline.json'));
 
 % Set random seed
-rng(model.rng_seed)
+rng(model.rng_seed);
 
 % Initilize type-1 agents' locations
 agents = [ ...
-    sample(1:model.n_agents_by_type(1), :, 1), ...
+    sample(1 : model.n_agents_by_type(1), :, 1), ...
     ones(model.n_agents_by_type(1),1) ...
 ];
 
-% Append other types
-for i = 2:model.n_types;
+% Initilize all other types' locations
+for i = 2 : model.n_types;
 
     n = model.n_agents_by_type(i)
     % Obtain agents' initial locations and types from sample.
     agents_by_type = [sample(1:n, :, i), i*ones(n,1)];
     agents = [agents; agents_by_type];
+
 end
 
 % Initilize placeholder for locations by round.
@@ -52,7 +52,7 @@ locations_by_round = NaN*zeros(size(agents, 1), 3, model.max_iterations);
 locations_by_round( :, :, 1) = agents;
 n_rounds = 1;
 
-for loop_counter = 2:model.max_iterations;
+for loop_counter = 2 : model.max_iterations;
     
     locations_by_round( :, :, loop_counter) = ( ...
         locations_by_round( :, :, loop_counter-1) ...
@@ -85,14 +85,12 @@ for loop_counter = 2:model.max_iterations;
         
         % Update this agent's location
         locations_by_round(a, :, loop_counter) = new_location;
-    
     end
     
     % We are done if everybody is happy
     if someone_moved == 0;
         break;
     end
-    
 end
 
 % Not everybody has reached happiness
