@@ -5,8 +5,7 @@
 % line that needs to correspond to a file called
 % ``[model_name].json`` in the "IN_MODEL_SPECS" directory.
 
-% TO DO: - Plot locations        
-%        - Recover model name from command line
+% TO DO: - Recover model name from command line
 %        - Get docs sorted out
 %        - Sort out Java stuff
 
@@ -32,15 +31,15 @@ rng(model.rng_seed);
 % Initilize type-1 agents' locations
 agents = [ ...
     sample(1 : model.n_agents_by_type(1), :, 1), ...
-    ones(model.n_agents_by_type(1),1) ...
+    ones(model.n_agents_by_type(1), 1) ...
 ];
 
 % Initilize all other types' locations
 for i = 2 : model.n_types;
 
-    n = model.n_agents_by_type(i)
+    n = model.n_agents_by_type(i);
     % Obtain agents' initial locations and types from sample.
-    agents_by_type = [sample(1:n, :, i), i*ones(n,1)];
+    agents_by_type = [sample(1 : n, :, i), i*ones(n, 1)];
     agents = [agents; agents_by_type];
 
 end
@@ -55,7 +54,7 @@ n_rounds = 1;
 for loop_counter = 2 : model.max_iterations;
     
     locations_by_round( :, :, loop_counter) = ( ...
-        locations_by_round( :, :, loop_counter-1) ...
+        locations_by_round( :, :, loop_counter - 1) ...
     );
     
     someone_moved = 0;
@@ -78,7 +77,7 @@ for loop_counter = 2 : model.max_iterations;
         );
         
         % Check if this agent moved
-        if (new_location(1:2) ~= old_location(1:2));
+        if (new_location(1 : 2) ~= old_location(1 : 2));
             someone_moved = 1;
             n_rounds = loop_counter;
         end
@@ -98,5 +97,5 @@ if someone_moved == 1;
     disp('No convergence reached: Not everyone happy!');
 end
 
-locations_by_round = locations_by_round( :, :, (1:n_rounds));
+locations_by_round = locations_by_round( :, :, (1 : n_rounds));
 save(project_paths('OUT_ANALYSIS', 'schelling_baseline.mat'), 'locations_by_round');   
