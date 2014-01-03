@@ -7,7 +7,6 @@
 
 % TO DO: - Recover model name from command line
 %        - Get docs sorted out
-%        - Sort out Java stuff
 
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
@@ -15,14 +14,14 @@ addpath ../../bld/src/library/
 % Add path to relevant model code
 addpath ../model_code/
 
-% Add path to matlab-json parser. Note: This requires the jvm
+% Add path to matlab-json parser
 addpath ../library/matlab-json/
 json.startup
 
 % Load random sample with locations
 load(project_paths('OUT_DATA', 'samples.mat'));
 
-% Set up a matrix specifying each agent's location and type
+% Load model specifications
 model = json.read(project_paths('IN_MODEL_SPECS', 'max_moves_2.json'));
 
 % Set random seed
@@ -36,12 +35,10 @@ agents = [ ...
 
 % Initilize all other types' locations
 for i = 2 : model.n_types;
-
     n = model.n_agents_by_type(i);
     % Obtain agents' initial locations and types from sample.
     agents_by_type = [sample(1 : n, :, i), i*ones(n, 1)];
     agents = [agents; agents_by_type];
-
 end
 
 % Initilize placeholder for locations by round.
