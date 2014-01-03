@@ -58,7 +58,7 @@ for loop_counter = 2 : model.max_iterations;
     );
     
     someone_moved = 0;
-    for a = 1:size(agents, 1); % Loop through agents
+    for a = 1 : size(agents, 1); % Loop through agents
                 
         % Obtain this agent's current location
         old_location = locations_by_round(a, :, loop_counter);

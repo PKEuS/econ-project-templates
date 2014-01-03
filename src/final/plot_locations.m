@@ -6,7 +6,7 @@ load(project_paths('OUT_ANALYSIS', 'schelling_baseline.mat'));
 n_cycles = size(locations_by_round, 3);
 n_rows = ceil(n_cycles / 2);
 n_types = 2;
-colors = ['g', 'b', 'r', 'y']; % 4 types max
+colors = ['g', 'b'];
 
 f = figure('visible', 'off');
 
