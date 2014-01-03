@@ -15,7 +15,7 @@ addpath ../../bld/src/library/
 % Add path to relevant model code
 addpath ../model_code/
 
-% Add path to matlab-json parser
+% Add path to matlab-json parser. Note: This requires the jvm
 addpath ../library/matlab-json/
 json.startup
 
@@ -23,7 +23,7 @@ json.startup
 load(project_paths('OUT_DATA', 'samples.mat'));
 
 % Set up a matrix specifying each agent's location and type
-model = json.read(project_paths('IN_MODEL_SPECS', 'baseline.json'));
+model = json.read(project_paths('IN_MODEL_SPECS', 'max_moves_2.json'));
 
 % Set random seed
 rng(model.rng_seed);
@@ -94,7 +94,7 @@ end
 
 % Not everybody has reached happiness
 if someone_moved == 1;
-    disp('No convergence reached: Not everyone happy!');
+    disp(['No convergence achieved after ', int2str(model.max_iterations), ' iterations.'])
 end
 
 locations_by_round = locations_by_round( :, :, (1 : n_rounds));
