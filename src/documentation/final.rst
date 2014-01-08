@@ -8,5 +8,5 @@ Documentation of the code in **final**.
 
 Schelling example:
 
-.. automodule:: src.final.plot_locations
-    :members:
+Load agents location at each cycle and create a new Matlab figure. 
+Plot each agent's location at every cycle until convergence or ``max_iterations`` is reached.
