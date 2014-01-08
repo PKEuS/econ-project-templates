@@ -8,13 +8,14 @@ n_rows = ceil(n_cycles / 2);
 n_types = 2;
 colors = ['g', 'b'];
 
+% Create new figure
 f = figure('visible', 'off');
 % Adjust figure size
 set(f, 'Units', 'normalized');
 pos = get(f, 'Position');
 set(f, 'Position', [pos(1) pos(2) pos(3) n_rows*0.2])
 
-% Create new subplot and plot agents' locations for each cycle
+% Create new subplot and plot each agent's location for each cycle
 for i = 1 : n_cycles;
     this_round = locations_by_round( :, :, i);
     h = subplot(n_rows, 2, i);

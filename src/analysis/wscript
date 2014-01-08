@@ -16,7 +16,7 @@ def build(ctx):
         deps=[
             ctx.path_to(ctx, 'IN_MODEL_SPECS', '{}.json'.format(model)),
             ctx.path_to(ctx, 'IN_MODEL_CODE', 'move_until_happy.m'),
-            ctx.path_to(ctx, 'OUT_DATA', 'samples.mat'),
+            ctx.path_to(ctx, 'OUT_DATA', 'sample.mat'),
         ],
         # append=model,
         name='{}_{}'.format(source, model)

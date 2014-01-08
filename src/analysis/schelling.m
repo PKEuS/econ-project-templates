@@ -18,11 +18,13 @@ addpath ../model_code/
 addpath ../library/matlab-json/
 json.startup
 
-% Load random sample with locations
-load(project_paths('OUT_DATA', 'samples.mat'));
+% Load random sample with initial locations
+load(project_paths('OUT_DATA', 'sample.mat'));
+
+model_name = 'baseline';
 
 % Load model specifications
-model = json.read(project_paths('IN_MODEL_SPECS', 'max_moves_2.json'));
+model = json.read(project_paths('IN_MODEL_SPECS', [model_name, '.json']));
 
 % Set random seed
 rng(model.rng_seed);
@@ -62,7 +64,7 @@ for loop_counter = 2 : model.max_iterations;
         
         % Obtain all other agents' current locations
         other_agents = locations_by_round( :, :, loop_counter);
-        other_agents(a, :) = []; % drop this agent from other agents
+        other_agents(a, :) = [];
                 
         % Obtain this agent's new location conditioned on his happiness
         new_location = move_until_happy(...
@@ -95,4 +97,4 @@ if someone_moved == 1;
 end
 
 locations_by_round = locations_by_round( :, :, (1 : n_rounds));
-save(project_paths('OUT_ANALYSIS', 'schelling_baseline.mat'), 'locations_by_round');   
+save(project_paths('OUT_ANALYSIS', ['schelling_', model_name , '.mat']), 'locations_by_round');   
