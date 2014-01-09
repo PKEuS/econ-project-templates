@@ -5,7 +5,7 @@
 % line that needs to correspond to a file called
 % ``[model_name].json`` in the "IN_MODEL_SPECS" directory.
 
-% TO DO: - Recover model name from command line
+% TO DO: 
 %        - Get docs sorted out
 
 % Add path to Matlab's project_paths function
@@ -21,7 +21,7 @@ json.startup
 % Load random sample with initial locations
 load(project_paths('OUT_DATA', 'sample.mat'));
 
-model_name = 'baseline';
+model_name = append; % append is the task variable passed from the command line
 
 % Load model specifications
 model = json.read(project_paths('IN_MODEL_SPECS', [model_name, '.json']));

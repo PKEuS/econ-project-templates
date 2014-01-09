@@ -1,7 +1,9 @@
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
 
-load(project_paths('OUT_ANALYSIS', 'schelling_baseline.mat'));
+model_name = append; % append is the task variable passed from the command line
+
+load(project_paths('OUT_ANALYSIS', ['schelling_', model_name, '.mat']));
 
 n_cycles = size(locations_by_round, 3);
 n_rows = ceil(n_cycles / 2);
@@ -40,4 +42,4 @@ for i = 1 : n_cycles;
 end
 
 set(f,'PaperPositionMode','auto');
-saveas(f, project_paths('OUT_FIGURES','schelling_baseline_fig.png'));
+saveas(f, project_paths('OUT_FIGURES',['schelling_', model_name, '.png']));
