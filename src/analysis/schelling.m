@@ -1,8 +1,9 @@
 %{
-Run a Schelling (1969, :cite:`Schelling69`) segregation model and store a 
-database with locations and types at each cycle. The scripts expects a model 
-name to be passed on the command line that needs to correspond to a file called 
-``[model_name].json`` in the "IN_MODEL_SPECS" directory. 
+Run a Schelling (1969) segregation model and store a database with locations 
+and types at each cycle. The scripts expects a model name to be passed on 
+the command line that needs to correspond to a file called [model_name].json 
+in the "IN_MODEL_SPECS" directory. The model name is then recovered form the 
+command line and made available through the matlab variable named "append".
 %}
 
 % Add path to Matlab's project_paths function

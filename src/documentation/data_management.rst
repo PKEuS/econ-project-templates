@@ -5,7 +5,7 @@ Data management
 
 Documentation of the code in **data_management**.
 
-Schelling example:
+Schelling example, :file:`get_simulation_draws.m`:
 
 .. literalinclude:: ../data_management/get_simulation_draws.m
    :start-after: %{

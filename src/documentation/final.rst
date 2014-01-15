@@ -5,10 +5,7 @@ Visualisation and results formatting
 
 Documentation of the code in **final**.
 
-
-Schelling example:
-
-Schelling example:
+Schelling example, :file:`plot_locations.m`:
 
 .. literalinclude:: ../final/plot_locations.m
    :start-after: %{

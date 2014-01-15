@@ -9,7 +9,7 @@ Introduction
 
 Documentation on the rationale, Waf, and more background is at http://hmgaudecker.github.io/econ-project-templates/
 
-The Matlab version of the template uses a modified version of Stachurski's and Sargent's code accompanying their Online Course :cite:`StachurskiSargent13` for Schelling's (1969, :cite:`Schelling69`) segregation model as the running exmaple. It is the analog to the Python template.
+This Matlab version of the template uses a modified version of Stachurski's and Sargent's code accompanying their Online Course :cite:`StachurskiSargent13` for Schelling's (1969, :cite:`Schelling69`) segregation model as the running example. It is the analog to the Python template.
 
 
 .. _getting_started:

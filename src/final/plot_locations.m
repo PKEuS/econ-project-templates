@@ -1,6 +1,6 @@
 %{
-Load agents' location at each cycle from **bld/out/analysis**. 
-Create a Matlab figure by plotting each agent's location by type at every cycle. 
+Load agents' location at each cycle from bld/out/analysis. Create a 
+Matlab figure by plotting each agent's location at every cycle. 
 %}
 
 % Add path to Matlab's project_paths function
@@ -22,7 +22,7 @@ set(f, 'Units', 'normalized');
 pos = get(f, 'Position');
 set(f, 'Position', [pos(1) pos(2) pos(3) n_rows*0.2])
 
-% Create new subplot and plot each agent's location for each cycle
+% Create new subplots and plot each agent's location at every cycle
 for i = 1 : n_cycles;
     this_round = locations_by_round( :, :, i);
     h = subplot(n_rows, 2, i);
