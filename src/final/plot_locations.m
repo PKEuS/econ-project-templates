@@ -1,3 +1,8 @@
+%{
+Load agents' location at each cycle from **bld/out/analysis**. 
+Create a Matlab figure by plotting each agent's location by type at every cycle. 
+%}
+
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
 

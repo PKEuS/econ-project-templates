@@ -8,9 +8,6 @@ Documentation of the code in **analysis**. Here's the core of the project. In ca
 
 Schelling example:
 
-Run a Schelling (1969, :cite:`Schelling69`) segregation
-model and store a database with locations and types at each cycle.
-
-The scripts expects a model name to be passed on the command
-line that needs to correspond to a file called
-``[model_name].json`` in the "IN_MODEL_SPECS" directory.
+.. literalinclude:: ../analysis/schelling.m
+   :start-after: %{
+   :end-before: %}

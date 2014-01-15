@@ -1,12 +1,9 @@
-% Run a Schelling (1969, :cite:`Schelling69`) segregation
-% model and store a database with locations and types at each cycle.
-
-% The scripts expects a model name to be passed on the command
-% line that needs to correspond to a file called
-% ``[model_name].json`` in the "IN_MODEL_SPECS" directory.
-
-% TO DO: 
-%        - Get docs sorted out
+%{
+Run a Schelling (1969, :cite:`Schelling69`) segregation model and store a 
+database with locations and types at each cycle. The scripts expects a model 
+name to be passed on the command line that needs to correspond to a file called 
+``[model_name].json`` in the "IN_MODEL_SPECS" directory. 
+%}
 
 % Add path to Matlab's project_paths function
 addpath ../../bld/src/library/
@@ -21,7 +18,7 @@ json.startup
 % Load random sample with initial locations
 load(project_paths('OUT_DATA', 'sample.mat'));
 
-model_name = append; % append is the task variable passed from the command line
+model_name = append; % append is the task generator variable passed from the command line
 
 % Load model specifications
 model = json.read(project_paths('IN_MODEL_SPECS', [model_name, '.json']));
