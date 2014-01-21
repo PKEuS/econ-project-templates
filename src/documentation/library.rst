@@ -30,17 +30,15 @@ As should be evident from the similarity of the names, the paths follow the step
 
 These will re-appear in automatically generated header files by calling the ``write_project_paths`` task generator (just use an output file with the correct extension for the language you need -- ``.py``, ``.r``, ``.m``, ``.do``)
 
-Here's what comes out for Python, to be imported from ``bld.src.library.project_paths``:
+Here's what comes out for Matlab, to be imported from ``bld/src/library/project_paths.m``:
 
-.. automodule:: bld.src.library.project_paths
-    :members:
+.. literalinclude:: ../../bld/src/library/project_paths.m
+   :language: matlab
 
 
 Matlab-JSON parser
 -------------------
 
-This package is provided by Kyamagu on GitHub_.
-It contains a Matlab class to serialize/decode Matlab objects into JSON format. Make sure to add the path to the directory containing ``+json`` in your Matlab script, and call ``json.startup``.
-:file:`schelling.m` in **src.analysis** requires this tool to load the JSON model specifications from **src.model_specs**.
+This package is provided by Kyamagu on GitHub_. It contains a Matlab class to serialize/decode Matlab objects into JSON format. Make sure to add the path to the directory containing ``+json`` in your Matlab script, and call ``json.startup``. The file :file:`schelling.m` in **src.analysis** requires this tool to load the JSON model specifications from **src.model_specs**.
 
 .. _GitHub: https://github.com/kyamagu/matlab-json.git

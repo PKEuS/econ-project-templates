@@ -47,5 +47,4 @@ def build(ctx):
         if '.git' in dirs:
             dirs.remove('.git')
 
-    ctx(features='write_project_paths', target='project_paths.py')
     ctx(features='write_project_paths', target='project_paths.m')

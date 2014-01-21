@@ -7,9 +7,9 @@
 Introduction
 ===============
 
-Documentation on the rationale, Waf, and more background is at http://hmgaudecker.github.io/econ-project-templates/
+Documentation on the design rationale, Waf, and more background is at http://hmgaudecker.github.io/econ-project-templates/ (The running example is the same, but it uses Python instead of Matlab as the language for the analysis)
 
-This Matlab version of the template uses a modified version of Stachurski's and Sargent's code accompanying their Online Course :cite:`StachurskiSargent13` for Schelling's (1969, :cite:`Schelling69`) segregation model as the running example. It is the analog to the Python template.
+The Matlab version of the template uses a modified and translated version of Stachurski's and Sargent's code accompanying their Online Course :cite:`StachurskiSargent13` for Schelling's (1969, :cite:`Schelling69`) segregation model as the running example.
 
 
 .. _getting_started:
@@ -17,7 +17,7 @@ This Matlab version of the template uses a modified version of Stachurski's and 
 Getting started
 ---------------
 
-**This assumes you have completed the steps in the** `README.md file <https://github.com/hmgaudecker/econ-project-templates/tree/python#templates-for-reproducible-research-projects-in-economics>`_ **and everything worked.**
+**This assumes you have completed the steps in the** `README.md file <https://github.com/hmgaudecker/econ-project-templates/tree/matlab#templates-for-reproducible-research-projects-in-economics>`_ **and everything worked.**
 
 The logic of the project template works by step of the analysis: 
 

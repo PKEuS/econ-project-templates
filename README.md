@@ -11,10 +11,10 @@ This is a collection of templates where much of this automation is pre-configure
 * Move your programs to the right places and change the placeholder scripts
 * Run Waf, which will build your entire project the first time you run it. Later, it will automatically figure out which parts of the project need to be rebuilt.
 
-The branch names follow the main language used in a particular example. You should base your project on the branch that specifies the language that you will use most. So the first thing to do is to switch branches using the button above, unless you plan on using Python mainly. You can easily add more languages to your projects, this is just a single line if the language is supported.
+The branch names follow the main language used in a particular example. You should base your project on the branch that specifies the language that you will use most. So the first thing to do is to switch branches using the button above (currently you are on the Matlab branch). You can easily add more languages to your projects, this is just a single line if the language is supported.
 
 
-Getting started (Python-based project)
+Getting started (Matlab-based project)
 ---------------------------------------------
 
 1. Clone the project template repository (or download the [zip file](https://github.com/hmgaudecker/econ-project-templates/archive/python.zip) and copy its contents to the place on your machine where you want the resulting project to live, e.g.
@@ -29,7 +29,7 @@ Getting started (Python-based project)
         UUU -> Your affiliation
         TTT -> The title of the project
 
-3. Make sure that [Python](http://python.org/) and a modern LaTeX distribution (e.g. [TeXLive](www.tug.org/texlive/), [MacTex](http://tug.org/mactex/), or [MikTex](http://miktex.org/)) can be found on your path. Your Python distribution needs to have the packages [sphinx](http://sphinx-doc.org/) and [sphinxcontrib.bibtex](https://pypi.python.org/pypi/sphinxcontrib-bibtex/) installed; the [Anaconda Python distribution](https://store.continuum.io/cshop/anaconda/) is recommended. You will need to follow up by ``conda install sphinxcontrib.bibtex`` or similar after installing it.
+3. Make sure that [Python](http://python.org/), Matlab and a modern LaTeX distribution (e.g. [TeXLive](www.tug.org/texlive/), [MacTex](http://tug.org/mactex/), or [MikTex](http://miktex.org/)) can be found on your path. Your Python distribution needs to have the packages [sphinx](http://sphinx-doc.org/) and [sphinxcontrib.bibtex](https://pypi.python.org/pypi/sphinxcontrib-bibtex/) installed; the [Anaconda Python distribution](https://store.continuum.io/cshop/anaconda/) is recommended. You will need to follow up by ``conda install sphinxcontrib.bibtex`` or similar after installing it.
 
 4. Navigate to the folder in a shell. Type the following commands to see whether the examples are working:
 
