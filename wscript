@@ -59,7 +59,6 @@ def configure(ctx):
     ctx.env.PYTHONPATH = os.getcwd()
     ctx.load('why')
     ctx.load('biber')
-    ctx.load('run_py_script')
     ctx.load('run_m_script')
     ctx.load('sphinx_build')
     ctx.load('write_project_headers')
