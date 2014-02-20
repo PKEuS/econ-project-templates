@@ -19,7 +19,7 @@ def build(ctx):
         return ctx.path_to(ctx, 'OUT_DATA', *args)
 
     def out_models(*args):
-        return ctx.path_to(ctx, 'OUT_MODELS', *args)
+        return ctx.path_to(ctx, 'OUT_MODEL_SPECS', *args)
 
     def out_analysis(*args):
         return ctx.path_to(ctx, 'OUT_ANALYSIS', *args)

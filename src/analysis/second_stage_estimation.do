@@ -6,7 +6,7 @@ We also compute confidence intervals for a usual Wald statistic and confidence
 intervals for the Anderson-Rubin (1949) statistic.
 
 The file requires to be called with a model specification as the argument,
-a corresponding do-file must exist in ${PATH_OUT_MODELS}. That file needs
+a corresponding do-file must exist in ${PATH_OUT_MODEL_SPECS}. That file needs
 to define globals:
 	
 	${DEPVAR} - the dependent variable
@@ -16,7 +16,7 @@ to define globals:
 	${DUMMIES} - additional dummy variables to be used as controls
 
 The do-file loops over various specifications with geographic controls /
-restrictions as defined in ${PATH_OUT_MODELS}/geography.do. Finally, we
+restrictions as defined in ${PATH_OUT_MODEL_SPECS}/geography.do. Finally, we
 store a dataset with estimation results.
 
 */
@@ -27,8 +27,8 @@ include src/library/stata/project_paths
 log using `"${PATH_OUT_ANALYSIS}/log/`1'.log"', replace
 
 // Read in the model controls
-do `"${PATH_OUT_MODELS}/`2'"'
-do `"${PATH_OUT_MODELS}/geography"'
+do `"${PATH_OUT_MODEL_SPECS}/`2'"'
+do `"${PATH_OUT_MODEL_SPECS}/geography"'
 
 // Define some temporary files
 tempfile ci_base ci_1 ci_2 ci_3 ci_4 ci_5 ci_6 ci_7 tempdata

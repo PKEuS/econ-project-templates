@@ -7,7 +7,7 @@ def build(ctx):
         return ctx.path_to(ctx, 'OUT_ANALYSIS', *args)
 
     def out_models(*args):
-        return ctx.path_to(ctx, 'OUT_MODELS', *args)
+        return ctx.path_to(ctx, 'OUT_MODEL_SPECS', *args)
 
     def out_figures(*args):
         return ctx.path_to(ctx, 'OUT_FIGURES', *args)
