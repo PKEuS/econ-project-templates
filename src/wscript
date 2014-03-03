@@ -1,4 +1,5 @@
 def build(ctx):
+    ctx.recurse('documentation')
     ctx.recurse('library')
     ctx.recurse('model_specs')
     # Adding the build group is required because the project
@@ -13,4 +14,3 @@ def build(ctx):
     # '.tex'-source file has not been generated.
     ctx.add_group()
     ctx.recurse('paper')
-    ctx.recurse('documentation')

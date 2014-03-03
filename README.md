@@ -52,4 +52,4 @@ A detailed set of instructions for setting up an entire Python environment may b
 
         python waf.py build -j1
 
-    If everything worked without error, you may now find more information on how to use the project template in "project_documentation/index.html".
+    **If everything worked without error, you may now find more information on how to use the project template in "project_documentation/index.html".**
