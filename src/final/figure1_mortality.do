@@ -88,7 +88,7 @@ noi corr logmort_r loggdp_r  if source0==1
 local corrb0_r = round(r(rho), .01)	
 
 
-// FIGURE 1A REDUCED FORM
+// FIGURE 2A REDUCED FORM
 
 noi reg risk logmort, cluster(logmort)
 predict riskmortfit
@@ -107,7 +107,7 @@ twoway scatter risk_b0 risk_c0 risk_s0 risk_b1 risk_c1 risk_s1 logmort, ///
 	yaxis(1) ///
 	yscale( axis(1)) ///
 	|| , ///
-	ti("FIGURE 1A: EXPROPRIATION RISK AND SETTLER MORTALITY" "ACCORDING TO MORTALITY RATE CHARACTERISTICS", size(3) ) ///
+	ti("FIGURE 2A: EXPROPRIATION RISK AND SETTLER MORTALITY" "ACCORDING TO MORTALITY RATE CHARACTERISTICS", size(3) ) ///
 	graphregion(fcolor(white) icolor(white) color(white)) ///	
 	saving(`riskmort', replace) ///
 	xsize(7) ysize(7) ///
@@ -122,10 +122,10 @@ twoway scatter risk_b0 risk_c0 risk_s0 risk_b1 risk_c1 risk_s1 logmort, ///
 	cols(4) colgap(1) textwidth(18)  symxsize(5) ///
 	nobox bmargin(zero) region(lcolor(none)) size(2.5)  span)
 	
-graph export `"${PATH_OUT_FIGURES}/figure1a_risk_mort.png"', replace
+graph export `"${PATH_OUT_FIGURES}/risk_mort.png"', replace
 
 
-// FIGURE 1B REDUCED FORMS
+// FIGURE 2B REDUCED FORMS
 
 reg loggdp logmort, cluster(logmort)
 predict gdpmortfit
@@ -147,7 +147,7 @@ twoway scatter loggdp_b0 loggdp_c0 loggdp_s0 loggdp_b1 loggdp_c1 loggdp_s1 logmo
 	yaxis(1) ///
 	yscale( axis(1)) ///
 	|| , ///
-	ti("FIGURE 1B: INCOME PER CAPITA AND SETTLER MORTALITY" "ACCORDING TO MORTALITY RATE CHARACTERISTICS", size(3)) ///
+	ti("FIGURE 2B: INCOME PER CAPITA AND SETTLER MORTALITY" "ACCORDING TO MORTALITY RATE CHARACTERISTICS", size(3)) ///
 	graphregion(fcolor(white) icolor(white) color(white)) ///
 	saving(`loggdpmort', replace) ///
 	xsize(7) ysize(7) ///
@@ -162,4 +162,4 @@ twoway scatter loggdp_b0 loggdp_c0 loggdp_s0 loggdp_b1 loggdp_c1 loggdp_s1 logmo
 	cols(4) colgap(1) textwidth(18) symxsize(5) ///
 	nobox bmargin(zero) region(lcolor(none)) size(2.5) span)
 
-graph export `"${PATH_OUT_FIGURES}/figure1b_gdp_mort.png"', replace
+graph export `"${PATH_OUT_FIGURES}/gdp_mort.png"', replace

@@ -21,8 +21,8 @@ def build(ctx):
         source='figure1_mortality.do',
         target=[
             out_analysis('log', 'figure1_mortality.log'),
-            out_figures('figure1a_risk_mort.png'),
-            out_figures('figure1b_gdp_mort.png')
+            out_figures('risk_mort.png'),
+            out_figures('gdp_mort.png')
         ],
         deps=[
             '../library/stata/project_paths.do',
