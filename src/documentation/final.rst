@@ -38,4 +38,3 @@ Table 3 - Second stage estimation of GDP on expropriation risk
 .. literalinclude:: ../final/table3_second_stage_est.do
     :start-after: /*
     :end-before: */     
-

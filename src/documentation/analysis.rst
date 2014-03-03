@@ -30,4 +30,3 @@ Second stage estimation of GDP on expropriation risk
 .. literalinclude:: ../analysis/second_stage_estimation.do
     :start-after: /*
     :end-before: */     
-    
