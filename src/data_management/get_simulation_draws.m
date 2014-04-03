@@ -6,8 +6,8 @@ the number of dimensions etc. from the "IN_MODEL_SPECS" file, this is
 to demonstrate the most basic use of run_m_script only. 
 %}
 
-% Add path to Matlab's project_paths function
-addpath ../../bld/src/library/
+% Add the path to the 'project_paths'-function
+addpath ../../bld/
 
 n_types = 2;
 n_draws = 30000;

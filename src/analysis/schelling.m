@@ -6,8 +6,8 @@ in the "IN_MODEL_SPECS" directory. The model name is then recovered form the
 command line and made available through the matlab variable named "append".
 %}
 
-% Add path to Matlab's project_paths function
-addpath ../../bld/src/library/
+% Add the path to the 'project_paths'-function
+addpath ../../bld/
 
 % Add path to relevant model code
 addpath ../model_code/
