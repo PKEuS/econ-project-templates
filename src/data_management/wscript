@@ -8,7 +8,7 @@ def build(ctx):
             ctx.path_to(ctx, 'OUT_DATA', 'ajrcomment_all.dta')
         ],
         deps=[
-            '../library/stata/project_paths.do',
+            '../../project_paths.do',
             ctx.path_to(ctx, 'IN_DATA', 'ajrcomment.dta')
         ]
     )

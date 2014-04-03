@@ -34,7 +34,7 @@ def build(ctx):
             out_analysis('regression_on_indicators_corr.dta')
         ],
         deps=[
-            '../library/stata/project_paths.do',
+            '../../project_paths.do',
             out_data('ajrcomment_all.dta')
         ]
     )
@@ -70,7 +70,7 @@ def build(ctx):
                     out_analysis('{}_stage_estimation_{}.dta'.format(stage, m))
                 ],
                 deps=[
-                    '../library/stata/project_paths.do',
+                    '../../project_paths.do',
                     out_data('ajrcomment_all.dta'),
                     out_models('{}.do'.format(m)),
                     out_models('geography.do')

@@ -7,7 +7,7 @@ It writes the results to Latex file "`"${PATH_OUT_TABLES}/table2_first_stage_est
 
 
 // Header do-file with path definitions, those end up in global macros.
-include src/library/stata/project_paths
+include project_paths
 log using `"${PATH_OUT_ANALYSIS}/log/`1'.log"', replace
 
 

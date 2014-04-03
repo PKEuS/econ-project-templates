@@ -6,7 +6,7 @@ dataset as described in Albouy (2012).
 
 
 // Header do-File with path definitions, those end up in global macros.
-include src/library/stata/project_paths
+include project_paths
 log using `"${PATH_OUT_DATA}/log/`1'.log"', replace
 
 use `"${PATH_IN_DATA}/ajrcomment"'
