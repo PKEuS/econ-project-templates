@@ -1,5 +1,8 @@
-Copyright (c) 2013, Hans-Martin
+Copyright (c) 2013-14, Hans-Martin von Gaudecker
 All rights reserved.
+
+Matlab JSON parser (c) by Kota Yamaguchi, https://github.com/kyamagu/matlab-json
+
 
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
