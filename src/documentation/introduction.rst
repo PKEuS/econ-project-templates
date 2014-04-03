@@ -36,7 +36,25 @@ First of all, think about whether this structure fits your needs -- if it does n
 
 Later adjustments should be painlessly possible, so things won't be set in stone.
 
-Once you have done that, move your source data to **src/original_data/** and start filling up the actual steps of the project workflow (data management, analysis, final steps, paper). All you should need to worry about is to call the correct task generators in the wscript files. Always specify the actions in the wscript that lives in the same directory as your main source file. Make sure you understand how the paths work in Waf and how to use the auto-generated files in the language you are using particular language (see the next section on :ref:`project_paths`).
+Once you have done that, move your source data to **src/original_data/** and start filling up the actual steps of the project workflow (data management, analysis, final steps, paper). All you should need to worry about is to call the correct task generators in the wscript files. Always specify the actions in the wscript that lives in the same directory as your main source file. Make sure you understand how the paths work in Waf and how to use the auto-generated files in the language you are using particular language (see the section on :ref:`project_paths`).
+
+
+.. _dag:
+
+DAG of the project
+==================
+
+See :download:`this pdf document </../../bld/src/documentation/dependency_graph.pdf>`. It should be helpful to get an idea of the overall structure of the example.
+
+
+.. raw:: latex
+    
+    \vspace*{2ex}
+
+    Forget about the previous sentence in the context of this pdf document because in LaTeX, we can include the pdf directly as a graphic:\\[2ex]
+    \includegraphics{../dependency_graph.pdf}
+
+For the sake of simplicity, the dependency graph does not include the second stage estimation that ends up in Table 3. It would work in exactly the same way as the first stage estimation is outlined in the graph. Same for the figures. The overlapping nodes stand for all five model specifications, only the baseline specification is actually written out (of course, there should be five edges as well, in principle).
 
 
 .. _project_paths:
@@ -61,3 +79,11 @@ As should be evident from the similarity of the names, the paths follow the step
 These will re-appear in automatically generated header files by calling the ``write_project_paths`` task generator (just use an output file with the correct extension for the language you need -- ``.py``, ``.r``, ``.m``, ``.do``).
 
 By default, these header files are generated in the top-level build directory, i.e. ``bld``. Since this is where Stata is launched, you can just get globals with the project paths by adding a line ``include project_paths`` at the top of you do-files.
+
+To see what these variables are, here is the content of *bld/project_paths.do*:
+    
+.. literalinclude:: ../../bld/project_paths.do
+
+.. note::
+
+    Note the changes to Stata's built-in system pathse. **These changes imply that Stata will not find any packages you installed system-wide anymore.** It is desired behaviour; see :ref:`stata_packages` for an explanation and for how to add packages to your project.
