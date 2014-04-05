@@ -1,6 +1,5 @@
 def build(ctx):
     ctx.recurse('documentation')
-    ctx.recurse('library')
     ctx.recurse('model_specs')
     # Adding the build group is required because the project
     # paths have to be generated first. It should not entail

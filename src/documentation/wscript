@@ -19,6 +19,13 @@ def post_install(ctx):
 
 
 def build(ctx):
+
+    # Create DAG
+    ctx(
+        features='tex',
+        source='dependency_graph.tex'
+    )
+
     # Build the documentation in pdf (via LaTeX) and html format.
     ctx(
         features='sphinx',

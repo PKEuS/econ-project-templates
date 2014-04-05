@@ -23,7 +23,7 @@ store a dataset with estimation results.
 
 
 // Header do-file with path definitions, those end up in global macros.
-include src/library/stata/project_paths
+include project_paths
 log using `"${PATH_OUT_ANALYSIS}/log/`1'.log"', replace
 
 
