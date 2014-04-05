@@ -3,8 +3,8 @@ Load agents' location at each cycle from bld/out/analysis. Create a
 Matlab figure by plotting each agent's location at every cycle. 
 %}
 
-% Add path to Matlab's project_paths function
-addpath ../../bld/src/library/
+% Add the path to the 'project_paths'-function
+addpath ../../bld/
 
 model_name = append; % append is the task variable passed from the command line
 
